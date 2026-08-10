@@ -3,125 +3,877 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Corporate Tax Filing Before 30 September 2026 | GFC</title>
 <meta name="description" content="FTA-registered tax agents. Talk to GFC today about your UAE corporate tax return before the 30 September 2026 deadline.">
 <meta name="robots" content="noindex, follow">
-
 <style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #f5f7fb;
+:root {
+  --gfc-blue: #1e4f94;
+  --gfc-blue-dark: #163a6e;
+  --gfc-blue-light: #eaf0f9;
+  --gfc-linen: #f7f6f3;
+  --gfc-ink: #1a1a1a;
+  --gfc-gray: #5b6470;
+  --gfc-border: #e2e5ea;
+  --gfc-whatsapp: #25d366;
+  --gfc-whatsapp-dark: #1da851;
+  --gfc-red: #a83f47;
+  --gfc-red-dark: #8f333a;
+  --gfc-gold: #f5b400;
+  --radius: 10px;
+  --radius-lg: 20px;
+  --shadow: 0 8px 24px rgba(20, 35, 65, 0.08);
+  --maxw: 1120px;
 }
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--gfc-ink);
+  background: #ffffff;
+  line-height: 1.55;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+button { font-family: inherit; }
 
 .container {
-  display: flex;
-  justify-content: space-between;
-  padding: 50px;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
-.left {
-  width: 55%;
-}
-
-.right {
-  width: 35%;
-  background: #fff;
-  padding: 25px;
-  border-radius: 10px;
-}
-
-h1 {
-  font-size: 40px;
-}
-
-input {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-button {
-  width: 100%;
-  padding: 15px;
-  background: #2f5597;
+.penalty-ticker {
+  background: var(--gfc-red);
   color: #fff;
+  padding: 9px 16px;
+}
+.penalty-ticker .ticker-row {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.penalty-ticker .ticker-viewport {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  height: 20px;
+}
+.penalty-ticker .ticker-track {
+  position: absolute;
+  top: 50%;
+  left: -100%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  font-size: 13.5px;
+  font-weight: 600;
+  animation: ticker-slide 14s linear infinite;
+}
+.penalty-ticker .ticker-track .ticker-icon-inline {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+@keyframes ticker-slide {
+  0%   { left: -100%; }
+  100% { left: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .penalty-ticker .ticker-track { animation: none; left: 0; }
+}
+.penalty-ticker .ticker-whatsapp {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--gfc-whatsapp);
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 6px 13px;
+  border-radius: 999px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.penalty-ticker .ticker-whatsapp:hover { background: var(--gfc-whatsapp-dark); }
+@media (max-width: 640px) {
+  .penalty-ticker .ticker-track { font-size: 12px; }
+  .penalty-ticker .ticker-whatsapp span.label { display: none; }
+}
+
+.site-header {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--gfc-border);
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.site-header .logo-text {
+  font-weight: 800;
+  font-size: 20px;
+  color: var(--gfc-blue);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+.site-header .header-contact {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 13.5px;
+  color: var(--gfc-gray);
+}
+.site-header .header-contact a {
+  color: var(--gfc-blue);
+  font-weight: 700;
+  text-decoration: none;
+}
+.site-header .header-contact a:hover { text-decoration: underline; }
+.site-header .tan-badge {
+  font-size: 11.5px;
+  color: var(--gfc-gray);
+  border: 1px solid var(--gfc-border);
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 15.5px;
+  text-decoration: none;
   border: none;
-  border-radius: 8px;
-  font-size: 16px;
   cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, opacity .15s ease;
+  white-space: nowrap;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn svg { width: 19px; height: 19px; flex-shrink: 0; }
+
+.btn-call {
+  background: var(--gfc-blue);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(30, 79, 148, 0.28);
+}
+.btn-call:hover { background: var(--gfc-blue-dark); }
+
+.btn-whatsapp {
+  background: var(--gfc-whatsapp);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.28);
+}
+.btn-whatsapp:hover { background: var(--gfc-whatsapp-dark); }
+
+.btn-ghost-light {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,0.65);
+}
+.btn-ghost-light:hover { background: rgba(255,255,255,0.22); }
+
+.btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.hero {
+  background: linear-gradient(180deg, var(--gfc-blue-light) 0%, #ffffff 100%);
+  padding: 48px 0 56px;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; }
 }
 
-button:hover {
-  background: #1d3f7a;
+.hero .eyebrow {
+  display: inline-block;
+  background: #fff;
+  border: 1px solid var(--gfc-blue);
+  color: var(--gfc-blue);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+.hero h1 {
+  font-size: clamp(28px, 3.6vw, 42px);
+  line-height: 1.16;
+  margin: 0 0 14px;
+  font-weight: 800;
+  color: var(--gfc-ink);
+}
+.hero p.lead {
+  font-size: 17px;
+  color: var(--gfc-gray);
+  max-width: 540px;
+  margin: 0 0 6px;
+}
+.hero .lead-strong {
+  font-weight: 700;
+  color: var(--gfc-ink);
+}
+.hero-bullets {
+  list-style: none;
+  margin: 14px 0 26px;
+  padding: 0;
+  max-width: 480px;
+}
+.hero-bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15px;
+  color: var(--gfc-ink);
+  padding: 6px 0;
+}
+.hero-bullets .check-icon {
+  width: 19px; height: 19px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--gfc-blue);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  margin-top: 1px;
+}
+.hero-bullets .check-icon svg { width: 11px; height: 11px; }
+
+.hero .hero-note {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--gfc-gray);
 }
 
-.success-message {
+.lead-form-wrap { position: sticky; top: 24px; }
+.lead-form {
+  background: #fff;
+  border: 1px solid var(--gfc-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 26px 24px 22px;
+}
+.lead-form h3 {
+  margin: 0 0 4px;
+  font-size: 18px;
+  font-weight: 800;
+}
+.lead-form .form-sub {
+  margin: 0 0 18px;
+  font-size: 13px;
+  color: var(--gfc-gray);
+}
+.lead-form label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--gfc-ink);
+  margin: 12px 0 5px;
+}
+.lead-form label .required { color: var(--gfc-red); }
+.lead-form input {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1px solid var(--gfc-border);
+  border-radius: 8px;
+  font-size: 14.5px;
+  font-family: inherit;
+}
+.lead-form input:focus {
+  outline: none;
+  border-color: var(--gfc-blue);
+  box-shadow: 0 0 0 3px rgba(30,79,148,0.12);
+}
+.lead-form input.field-error {
+  border-color: var(--gfc-red);
+}
+.lead-form .field-error-msg {
   display: none;
-  color: green;
+  font-size: 12px;
+  color: var(--gfc-red);
+  margin-top: 4px;
+}
+.lead-form input.field-error + .field-error-msg { display: block; }
+.lead-form .btn {
+  width: 100%;
+  margin-top: 18px;
+  padding: 14px;
+}
+.lead-form .btn[disabled] {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+.lead-form .privacy-note {
+  margin: 12px 0 0;
+  font-size: 11.5px;
+  color: var(--gfc-gray);
   text-align: center;
-  font-weight: bold;
+}
+.lead-form .form-status {
+  margin-top: 12px;
+  font-size: 13px;
+  text-align: center;
+  display: none;
+}
+.lead-form .form-status.success { display: block; color: #1a7a3a; }
+.lead-form .form-status.error { display: block; color: var(--gfc-red); }
+
+.trust-strip {
+  background: var(--gfc-blue);
+  color: #fff;
+  padding: 42px 0;
+}
+.trust-strip .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.trust-strip .stat-item {
+  font-size: 19px;
+  font-weight: 700;
+}
+.trust-strip .dot {
+  opacity: 0.45;
+  font-size: 19px;
+}
+.trust-strip .google-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 999px;
+  padding: 8px 18px;
+}
+.trust-strip .google-badge .g-icon {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.trust-strip .google-badge .g-icon svg { width: 14px; height: 14px; }
+.trust-strip .google-badge .rating-num {
+  font-size: 19px;
+  font-weight: 800;
+}
+.trust-strip .google-badge .stars { display: flex; gap: 1px; }
+.trust-strip .google-badge .stars svg { width: 15px; height: 15px; }
+@media (max-width: 760px) {
+  .trust-strip { padding: 30px 0; }
+  .trust-strip .stat-item, .trust-strip .dot, .trust-strip .google-badge .rating-num { font-size: 15px; }
+}
+
+.section { padding: 52px 0; }
+.section h2 {
+  font-size: clamp(21px, 2.6vw, 28px);
+  margin: 0 0 8px;
+  font-weight: 800;
+  text-align: center;
+}
+.section .section-lead {
+  color: var(--gfc-gray);
+  max-width: 560px;
+  margin: 0 auto 34px;
+  font-size: 15.5px;
+  text-align: center;
+}
+.section-alt { background: var(--gfc-linen); }
+
+.who-files {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+@media (max-width: 860px) { .who-files { grid-template-columns: repeat(2, 1fr); } }
+
+.who-card {
+  background: #fff;
+  border: 1px solid var(--gfc-border);
+  border-radius: var(--radius);
+  padding: 22px 18px;
+  text-align: center;
+}
+.who-card .icon {
+  width: 46px; height: 46px;
+  margin: 0 auto 14px;
+  background: var(--gfc-blue-light);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gfc-blue);
+}
+.who-card .icon svg { width: 22px; height: 22px; }
+.who-card h3 { margin: 0 0 6px; font-size: 15.5px; }
+.who-card p { margin: 0; color: var(--gfc-gray); font-size: 13px; }
+
+.included-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+@media (max-width: 860px) { .included-grid { grid-template-columns: 1fr; } }
+
+.included-col h3, .why-col h3 {
+  font-size: 17px;
+  margin: 0 0 16px;
+  font-weight: 800;
+}
+.checklist { list-style: none; margin: 0; padding: 0; }
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--gfc-border);
+  font-size: 14.5px;
+}
+.checklist li:last-child { border-bottom: none; }
+.checklist .check-icon {
+  width: 20px; height: 20px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--gfc-blue);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  margin-top: 1px;
+}
+.checklist .check-icon svg { width: 12px; height: 12px; }
+
+.why-stats { display: flex; flex-direction: column; gap: 14px; }
+.why-stat {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fff;
+  border: 1px solid var(--gfc-border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+}
+.why-stat .badge {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: var(--gfc-blue-light);
+  color: var(--gfc-blue);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.why-stat .badge svg { width: 20px; height: 20px; }
+.why-stat h4 { margin: 0 0 2px; font-size: 14.5px; font-weight: 700; }
+.why-stat p { margin: 0; font-size: 12.5px; color: var(--gfc-gray); }
+
+.mid-cta-section { padding: 20px 0 52px; }
+.mid-cta {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--gfc-blue) 0%, var(--gfc-blue-dark) 100%);
+  border-radius: var(--radius-lg);
+  padding: 46px 48px;
+  color: #fff;
+}
+.mid-cta::before, .mid-cta::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+}
+.mid-cta::before { width: 340px; height: 340px; top: -140px; right: 60px; }
+.mid-cta::after { width: 220px; height: 220px; bottom: -110px; right: 220px; background: rgba(255,255,255,0.06); }
+
+.mid-cta-inner { position: relative; z-index: 2; max-width: 620px; }
+.mid-cta h2 {
+  text-align: left;
+  color: #fff;
+  font-size: clamp(24px, 3.2vw, 34px);
+  margin: 0 0 12px;
+  line-height: 1.18;
+}
+.mid-cta p {
+  margin: 0 0 26px;
+  font-size: 16px;
+  opacity: 0.95;
+}
+.mid-cta .btn-row { flex-wrap: wrap; }
+
+@media (max-width: 700px) {
+  .mid-cta { padding: 34px 26px 44px; }
+}
+
+.lp-footer {
+  padding: 36px 0 30px;
+  border-top: 1px solid var(--gfc-border);
+  text-align: center;
+}
+.lp-footer .logo-text {
+  font-weight: 800;
+  font-size: 17px;
+  color: var(--gfc-blue);
+  margin-bottom: 14px;
+}
+.lp-footer .footer-cta {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gfc-ink);
+  margin-bottom: 14px;
+}
+.lp-footer .footer-contact {
+  font-size: 13.5px;
+  color: var(--gfc-gray);
+  margin-bottom: 6px;
+}
+.lp-footer .footer-contact a { color: var(--gfc-blue); text-decoration: none; font-weight: 600; }
+.lp-footer .disclaimer {
+  font-size: 11.5px;
+  color: var(--gfc-gray);
+  opacity: 0.8;
+  margin-top: 16px;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mobile-cta {
+  display: none;
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 50;
+  background: #fff;
+  border-top: 1px solid var(--gfc-border);
+  box-shadow: 0 -6px 20px rgba(0,0,0,0.08);
+  padding: 10px 14px;
+  gap: 10px;
+}
+.mobile-cta .btn { flex: 1; padding: 13px 10px; font-size: 14px; }
+@media (max-width: 640px) {
+  .mobile-cta { display: flex; }
+  body { padding-bottom: 74px; }
 }
 </style>
-</head>
 
+<!--
+  TRACKING PLACEHOLDER
+  Drop GTM / GA4 / Meta Pixel snippets here before this page goes live on paid traffic.
+  Suggested conversion events: call_click (#cta-call, #cta-call-2), whatsapp_click
+  (#cta-whatsapp, #cta-whatsapp-2, #cta-whatsapp-3, #ticker-whatsapp), form_submit (#lead-form).
+-->
+
+</head>
 <body>
 
-<div class="container">
-  
-  <div class="left">
-    <h1>Fast & Compliant UAE corporate tax filing - Done in 3 Days</h1>
-    <p>End-to-end CT filing handled by experts - quick, compliant, and stress-free.</p>
-  </div>
-
-  <div class="right">
-    <h2>Get Your UAE Corporate Tax Filing Done</h2>
-
-    <!-- ✅ FORM START -->
-    <form id="leadForm">
-      <input type="text" name="name" placeholder="Name" required>
-      <input type="email" name="email" placeholder="Work Email" required>
-      <input type="tel" name="phone" placeholder="Phone" required>
-
-      <button type="submit">Get Free Consultation</button>
-    </form>
-
-    <div class="success-message" id="successMsg">
-      ✅ Thank you! Our team will contact you shortly.
+<!-- Penalty alert ticker -->
+<div class="penalty-ticker">
+  <div class="ticker-row">
+    <div class="ticker-viewport">
+      <div class="ticker-track">
+        <span class="ticker-icon-inline"><svg width="16" height="16" viewBox="0 0 24 24">
+  <path d="M12 2.5 L23 21.5 L1 21.5 Z" fill="#FFC90E" stroke="#8a6d00" stroke-width="0.6" stroke-linejoin="round"/>
+  <rect x="11.15" y="8.5" width="1.7" height="7" rx="0.8" fill="#1a1a1a"/>
+  <circle cx="12" cy="18" r="1.15" fill="#1a1a1a"/>
+</svg></span>
+        <span>Deadline Alert: Avoid penalties up to AED 10,000. File your Corporate Tax before Sept 30, 2026.</span>
+      </div>
     </div>
-    <!-- ✅ FORM END -->
+    <a id="ticker-whatsapp" class="ticker-whatsapp" href="https://api.whatsapp.com/send?phone=971503098987&text=Hi%20GFC%2C%20I%20need%20help%20with%20my%20corporate%20tax%20filing%20before%20the%2030%20September%20deadline." target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.27 4.9L2 22l5.25-1.38a9.94 9.94 0 004.79 1.22h.01c5.52 0 10-4.48 10-10s-4.48-9.84-10.02-9.84zm5.85 14.13c-.25.7-1.45 1.34-2 1.42-.51.08-1.15.11-1.86-.12-.43-.14-.98-.32-1.68-.62-2.96-1.28-4.89-4.25-5.04-4.45-.15-.2-1.21-1.61-1.21-3.07 0-1.46.77-2.18 1.04-2.47.27-.29.6-.36.8-.36.2 0 .4 0 .57.01.18.01.43-.07.68.51.25.6.85 2.06.93 2.21.08.15.13.33.03.53-.1.2-.15.33-.3.5-.15.18-.31.4-.45.53-.15.15-.3.31-.13.61.17.3.77 1.26 1.65 2.04 1.14 1.01 2.1 1.33 2.4 1.48.3.15.48.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.73.81 2.02.96.3.15.5.22.57.35.08.13.08.7-.17 1.4z"/></svg>
+      <span class="label">WhatsApp Now</span>
+    </a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="container">
+    <a href="https://goldenfalconconsultants.com" class="logo-text">GFC</a>
+    <div class="header-contact">
+      <a href="tel:+971501848414">&#128222; +971 50 184 8414</a>
+      <span class="tan-badge">FTA Registered &middot; TAN: 30002745</span>
+    </div>
+  </div>
+</header>
+
+<!-- Hero: headline left, sticky form right -->
+<section class="hero">
+  <div class="container hero-grid">
+
+    <div class="hero-content">
+      <span class="eyebrow">FTA-REGISTERED TAX AGENTS &middot; DUBAI, UAE</span>
+      <h1>Fast &amp; compliant UAE corporate tax filing - Done in 3 Days</h1>
+      <p class="lead"><span class="lead-strong">End-to-end CT filing handled by experts - quick, compliant, and stress-free.</span></p>
+      <ul class="hero-bullets">
+        <li><span class="check-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> 100% compliance guaranteed</li>
+        <li><span class="check-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Fixed pricing - no hidden charges</li>
+        <li><span class="check-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Dedicated tax expert</li>
+        <li><span class="check-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Perfect for entrepreneurs and small business owners</li>
+      </ul>
+      <div class="btn-row">
+        <a id="cta-call" class="btn btn-call" href="tel:+971501848414">
+          <svg width="19" height="19" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 0 002.25-2.25v-1.372a1.5 1.5 0 00-1.318-1.489l-3.895-.487a1.5 1.5 0 00-1.5.732l-.712 1.28a11.25 11.25 0 01-5.94-5.94l1.28-.712a1.5 1.5 0 00.732-1.5l-.487-3.895A1.5 1.5 0 0010.372 4.5H9a2.25 2.25 0 00-2.25 2.25z"/></svg>
+          Call Now
+        </a>
+        <a id="cta-whatsapp" class="btn btn-whatsapp" href="https://api.whatsapp.com/send?phone=971503098987&text=Hi%20GFC%2C%20I%20need%20help%20with%20my%20corporate%20tax%20filing%20before%20the%2030%20September%20deadline." target="_blank" rel="noopener">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.27 4.9L2 22l5.25-1.38a9.94 9.94 0 004.79 1.22h.01c5.52 0 10-4.48 10-10s-4.48-9.84-10.02-9.84zm5.85 14.13c-.25.7-1.45 1.34-2 1.42-.51.08-1.15.11-1.86-.12-.43-.14-.98-.32-1.68-.62-2.96-1.28-4.89-4.25-5.04-4.45-.15-.2-1.21-1.61-1.21-3.07 0-1.46.77-2.18 1.04-2.47.27-.29.6-.36.8-.36.2 0 .4 0 .57.01.18.01.43-.07.68.51.25.6.85 2.06.93 2.21.08.15.13.33.03.53-.1.2-.15.33-.3.5-.15.18-.31.4-.45.53-.15.15-.3.31-.13.61.17.3.77 1.26 1.65 2.04 1.14 1.01 2.1 1.33 2.4 1.48.3.15.48.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.73.81 2.02.96.3.15.5.22.57.35.08.13.08.7-.17 1.4z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+      <p class="hero-note">Free-zone entity? Even at a 0% tax rate, filing is still mandatory to keep your QFZP status.</p>
+    </div>
+
+    <div class="lead-form-wrap">
+      <div class="lead-form">
+        <h3>Get Your UAE Corporate Tax Filing Done in 3 Days</h3>
+        <p class="form-sub">Get a free callback from a specialist within 24 hours.</p>
+        <form id="lead-form" novalidate>
+          <label for="lf-name">Name <span class="required">*</span></label>
+          <input type="text" id="lf-name" name="name" required autocomplete="name">
+          <p class="field-error-msg">Please enter your name.</p>
+
+          <label for="lf-email">Work email <span class="required">*</span></label>
+          <input type="email" id="lf-email" name="email" required autocomplete="email">
+          <p class="field-error-msg" id="lf-email-error">Please use your company work email, not a personal address (e.g. Gmail, Yahoo).</p>
+
+          <label for="lf-phone">Phone <span class="required">*</span></label>
+          <input type="tel" id="lf-phone" name="phone" required autocomplete="tel">
+          <p class="field-error-msg">Please enter a valid phone number.</p>
+
+          <button type="submit" class="btn btn-call" id="lf-submit">Get Free Consultation</button>
+          <p class="form-status" id="lf-status"></p>
+          <p class="privacy-note">By submitting, you agree to be contacted by a GFC advisor.</p>
+        </form>
+      </div>
+    </div>
 
   </div>
+</section>
 
+<!-- Trust strip -->
+<section class="trust-strip">
+  <div class="container">
+    <span class="stat-item">15,000+ Returns Filed</span><span class="dot">&middot;</span>
+    <span class="stat-item">FTA-Certified Experts</span><span class="dot">&middot;</span>
+    <span class="stat-item">Fixed Fees</span><span class="dot">&middot;</span>
+    <span class="google-badge">
+      <span class="g-icon"><svg viewBox="0 0 48 48">
+  <path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-3.1-.4-4.6H24v9h11.9c-.5 2.8-2.1 5.1-4.4 6.7v5.6h7.2c4.2-3.9 6.4-9.6 6.4-16.7z"/>
+  <path fill="#34A853" d="M24 46c6 0 11-2 14.7-5.4l-7.2-5.6c-2 1.3-4.6 2.1-7.5 2.1-5.8 0-10.7-3.9-12.4-9.1H4.2v5.8C7.9 41.1 15.4 46 24 46z"/>
+  <path fill="#FBBC05" d="M11.6 27.9c-.4-1.3-.7-2.6-.7-3.9s.2-2.7.7-3.9v-5.8H4.2C2.8 17.2 2 20.5 2 24s.8 6.8 2.2 9.7z"/>
+  <path fill="#EA4335" d="M24 10.7c3.3 0 6.2 1.1 8.5 3.3l6.4-6.4C34.9 4 30 2 24 2 15.4 2 7.9 6.9 4.2 14.3l7.4 5.8c1.7-5.2 6.6-9.1 12.4-9.1z"/>
+</svg></span>
+      <span class="rating-num">4.8/5</span>
+      <span class="stars"><svg viewBox="0 0 20 20" fill="#F5B400"><path d="M10 1.5l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4.1 6.1-.6z"/></svg><svg viewBox="0 0 20 20" fill="#F5B400"><path d="M10 1.5l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4.1 6.1-.6z"/></svg><svg viewBox="0 0 20 20" fill="#F5B400"><path d="M10 1.5l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4.1 6.1-.6z"/></svg><svg viewBox="0 0 20 20" fill="#F5B400"><path d="M10 1.5l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4.1 6.1-.6z"/></svg><svg viewBox="0 0 20 20" fill="#F5B400"><path d="M10 1.5l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.6-4.1 6.1-.6z"/></svg></span>
+    </span>
+  </div>
+</section>
+
+<!-- Who needs to file -->
+<section class="section">
+  <div class="container">
+    <h2>Who needs to file corporate tax</h2>
+    <p class="section-lead">If you fall into any of these categories, a return is due, regardless of whether tax is actually owed.</p>
+    <div class="who-files">
+      <div class="who-card">
+        <div class="icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6M9 11h.01M15 11h.01M9 15h.01M15 15h.01"/></svg></div>
+        <h3>Mainland</h3>
+        <p>Every UAE mainland company must register and file, regardless of profit.</p>
+      </div>
+      <div class="who-card">
+        <div class="icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9.75L12 3l9 6.75V21a1 1 0 01-1 1H4a1 1 0 01-1-1V9.75zM9 21V12h6v9"/></svg></div>
+        <h3>Free Zone</h3>
+        <p>Even at a 0% rate, free zone entities must file to keep QFZP status.</p>
+      </div>
+      <div class="who-card">
+        <div class="icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3.75h9l6 6V21M6 21V9.75L13.5 3.75M9 21v-4.5h4.5V21"/></svg></div>
+        <h3>Foreign Branch</h3>
+        <p>UAE branches of foreign companies are taxable persons and must file.</p>
+      </div>
+      <div class="who-card">
+        <div class="icon"><svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5z"/></svg></div>
+        <h3>Sole Establishment</h3>
+        <p>Individuals with over AED 1M in UAE business turnover are also in scope.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What you get + why GFC -->
+<section class="section section-alt">
+  <div class="container included-grid">
+
+    <div class="included-col">
+      <h3>What's included</h3>
+      <ul class="checklist">
+        <li><span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Corporate tax registration on EmaraTax</li>
+        <li><span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Taxable income computation</li>
+        <li><span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Return preparation &amp; filing</li>
+        <li><span class="check-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Payment support &amp; FTA correspondence</li>
+      </ul>
+    </div>
+
+    <div class="why-col">
+      <h3>Why GFC</h3>
+      <div class="why-stats">
+        <div class="why-stat">
+          <div class="badge"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5z"/></svg></div>
+          <div><h4>One dedicated advisor</h4><p>A single point of contact from registration through filing.</p></div>
+        </div>
+        <div class="why-stat">
+          <div class="badge"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+          <div><h4>Clear, upfront pricing</h4><p>You'll know the fee for this engagement before we start, no hourly surprises.</p></div>
+        </div>
+        <div class="why-stat">
+          <div class="badge"><svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+          <div><h4>FTA-registered agents</h4><p>Tax Agency Number (TAN) 30002745, on file with the Federal Tax Authority.</p></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Mid-page CTA band -->
+<section class="mid-cta-section">
+  <div class="container">
+    <div class="mid-cta">
+      <div class="mid-cta-inner">
+        <h2>Ready to get started with Corporate Tax Filing?</h2>
+        <p>Talk to our experts today - no obligation, no jargon, just clear advice.</p>
+        <div class="btn-row">
+          <a class="btn btn-ghost-light" href="#lead-form" id="scroll-to-form">
+            <svg width="19" height="19" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path stroke-linecap="round" d="M8 3v3M16 3v3M3 9.5h18"/><path stroke-linecap="round" stroke-linejoin="round" d="M8.5 14l2 2 4-4"/></svg>
+            Schedule a Free Call
+          </a>
+          <a id="cta-whatsapp-2" class="btn btn-whatsapp" href="https://api.whatsapp.com/send?phone=971503098987&text=Hi%20GFC%2C%20I%20need%20help%20with%20my%20corporate%20tax%20filing%20before%20the%2030%20September%20deadline." target="_blank" rel="noopener">WhatsApp Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="lp-footer">
+  <div class="container">
+    <div class="logo-text">GFC</div>
+    <p class="footer-cta">Talk to a registered tax agent before 30 September 2026.</p>
+    <p class="footer-contact"><a href="tel:+971501848414">+971 50 184 8414</a> &nbsp;&middot;&nbsp; <a href="https://api.whatsapp.com/send?phone=971503098987" target="_blank" rel="noopener">WhatsApp</a></p>
+    <p class="footer-contact">Golden Falcon Consultants &middot; FTA Registered Tax Agency &middot; TAN: 30002745</p>
+    <p class="footer-contact">Dubai &middot; Abu Dhabi &middot; Sharjah &middot; Umm Al Quwain</p>
+    <p class="disclaimer">&copy; 2026 Golden Falcon Consultants. Penalty figures reflect commonly reported UAE corporate tax rules and should be confirmed on the FTA's EmaraTax portal for your specific situation.</p>
+  </div>
+</footer>
+
+<!-- Sticky mobile CTA -->
+<div class="mobile-cta">
+  <a class="btn btn-call" href="tel:+971501848414">Call Now</a>
+  <a id="cta-whatsapp-3" class="btn btn-whatsapp" href="https://api.whatsapp.com/send?phone=971503098987&text=Hi%20GFC%2C%20I%20need%20help%20with%20my%20corporate%20tax%20filing%20before%20the%2030%20September%20deadline." target="_blank" rel="noopener">WhatsApp</a>
 </div>
 
 <script>
-document.getElementById("leadForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  const form = this;
-
-  const data = {
-    name: form.querySelector('input[name="name"]').value,
-    email: form.querySelector('input[name="email"]').value,
-    phone: form.querySelector('input[name="phone"]').value
-  };
-
-  fetch("https://script.google.com/macros/s/AKfycbyQGOjsDcidKSPd3cwbyLdA0tDNKr38o1UIwjwlmW5TY0HrHZkdSk0KqJXYFyKbq2uH7A/exec", {
-    method: "POST",
-    body: JSON.stringify(data)
-  })
-  .then(() => {
-    form.style.display = "none";
-    document.getElementById("successMsg").style.display = "block";
-  })
-  .catch(() => {
-    alert("Something went wrong. Please try again.");
+  document.getElementById('scroll-to-form').addEventListener('click', function (e) {
+    e.preventDefault();
+    var form = document.getElementById('lead-form');
+    form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    var nameField = document.getElementById('lf-name');
+    setTimeout(function () { nameField.focus(); }, 500);
   });
-});
+
+  var FREE_EMAIL_DOMAINS = [
+    'gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'icloud.com',
+    'aol.com', 'live.com', 'msn.com', 'protonmail.com', 'proton.me',
+    'mail.com', 'yandex.com', 'gmx.com', 'rediffmail.com'
+  ];
+
+  function isValidWorkEmail(value) {
+    var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRe.test(value)) return false;
+    var domain = value.split('@')[1].toLowerCase();
+    return FREE_EMAIL_DOMAINS.indexOf(domain) === -1;
+  }
+
+  function setFieldError(input, hasError) {
+    input.classList.toggle('field-error', hasError);
+  }
+
+  // Google Apps Script Web App endpoint (deployed from your linked Sheet).
+  var LEAD_ENDPOINT = "https://script.google.com/macros/s/AKfycbyQGOjsDcidKSPd3cwbyLdA0tDNKr38o1UIwjwlmW5TY0HrHZkdSk0KqJXYFyKbq2uH7A/exec";
+
+  document.getElementById('lead-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var form = this;
+    var status = document.getElementById('lf-status');
+    var submitBtn = document.getElementById('lf-submit');
+    var nameEl = document.getElementById('lf-name');
+    var emailEl = document.getElementById('lf-email');
+    var phoneEl = document.getElementById('lf-phone');
+
+    var valid = true;
+
+    setFieldError(nameEl, nameEl.value.trim() === '');
+    if (nameEl.value.trim() === '') valid = false;
+
+    var emailOk = isValidWorkEmail(emailEl.value.trim());
+    setFieldError(emailEl, !emailOk);
+    if (!emailOk) valid = false;
+
+    var phoneOk = phoneEl.value.trim().replace(/[^0-9]/g, '').length >= 7;
+    setFieldError(phoneEl, !phoneOk);
+    if (!phoneOk) valid = false;
+
+    if (!valid) {
+      status.textContent = '';
+      status.classList.remove('success', 'error');
+      return;
+    }
+
+    status.textContent = '';
+    status.classList.remove('success', 'error');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    fetch(LEAD_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify({
+        name: nameEl.value.trim(),
+        email: emailEl.value.trim(),
+        phone: phoneEl.value.trim()
+      })
+    })
+    .then(function () {
+      status.textContent = "Thanks, we've received your details and will call you back shortly.";
+      status.classList.add('success');
+      form.reset();
+    })
+    .catch(function () {
+      status.textContent = "Something went wrong, please try again or call us directly.";
+      status.classList.add('error');
+    })
+    .finally(function () {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Get Free Consultation';
+    });
+  });
 </script>
 
 </body>
