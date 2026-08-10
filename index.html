@@ -1,20 +1,128 @@
-// TODO: replace with a real submission, e.g.:
-    // fetch('YOUR_ENDPOINT_URL', { method: 'POST', body: new FormData(this) });
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    fetch("https://script.google.com/macros/s/AKfycbyQGOjsDcidKSPd3cwbyLdA0tDNKr38o1UIwjwlmW5TY0HrHZkdSk0KqJXYFyKbq2uH7A/exec", {
-      method: "POST",
-      body: JSON.stringify({
-        name: nameEl.value.trim(),
-        email: emailEl.value.trim(),
-        phone: phoneEl.value.trim()
-      })
-    })
-    .then(function () {
-      status.textContent = "Thanks, we've received your details and will call you back shortly.";
-      status.classList.add('success');
-      form.reset();
-    })
-    .catch(function () {
-      status.textContent = "Something went wrong, please try again or call us directly.";
-      status.classList.remove('success');
-    });
+<title>Corporate Tax Filing Before 30 September 2026 | GFC</title>
+<meta name="description" content="FTA-registered tax agents. Talk to GFC today about your UAE corporate tax return before the 30 September 2026 deadline.">
+<meta name="robots" content="noindex, follow">
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f5f7fb;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+.left {
+  width: 55%;
+}
+
+.right {
+  width: 35%;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  background: #2f5597;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d3f7a;
+}
+
+.success-message {
+  display: none;
+  color: green;
+  text-align: center;
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  
+  <div class="left">
+    <h1>Fast & Compliant UAE corporate tax filing - Done in 3 Days</h1>
+    <p>End-to-end CT filing handled by experts - quick, compliant, and stress-free.</p>
+  </div>
+
+  <div class="right">
+    <h2>Get Your UAE Corporate Tax Filing Done</h2>
+
+    <!-- ✅ FORM START -->
+    <form id="leadForm">
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="email" name="email" placeholder="Work Email" required>
+      <input type="tel" name="phone" placeholder="Phone" required>
+
+      <button type="submit">Get Free Consultation</button>
+    </form>
+
+    <div class="success-message" id="successMsg">
+      ✅ Thank you! Our team will contact you shortly.
+    </div>
+    <!-- ✅ FORM END -->
+
+  </div>
+
+</div>
+
+<script>
+document.getElementById("leadForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const form = this;
+
+  const data = {
+    name: form.querySelector('input[name="name"]').value,
+    email: form.querySelector('input[name="email"]').value,
+    phone: form.querySelector('input[name="phone"]').value
+  };
+
+  fetch("https://script.google.com/macros/s/AKfycbyQGOjsDcidKSPd3cwbyLdA0tDNKr38o1UIwjwlmW5TY0HrHZkdSk0KqJXYFyKbq2uH7A/exec", {
+    method: "POST",
+    body: JSON.stringify(data)
+  })
+  .then(() => {
+    form.style.display = "none";
+    document.getElementById("successMsg").style.display = "block";
+  })
+  .catch(() => {
+    alert("Something went wrong. Please try again.");
+  });
+});
+</script>
+
+</body>
+</html>
