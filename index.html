@@ -1484,23 +1484,15 @@ body { padding-bottom: 74px; }
 
     fetch(SCRIPT_URL, {
       method: 'POST',
+      mode: 'no-cors',
       body: leadData,
       redirect: 'follow'
     })
-      .then(function (response) {
-        if (!response.ok) {
-          throw new Error('Network response failed.');
-        }
-        return response.json();
-      })
-      .then(function (result) {
-        if (!result || result.result !== 'success') {
-          throw new Error(
-            (result && result.message) ? result.message : 'Submission failed.'
-          );
-        }
+      .then(function () {
+        // In no-cors mode, Google Apps Script returns an opaque response.
+        // The browser cannot read response.json(), so we show success once
+        // the request has been sent without a network-level failure.
 
-        // Only show the confirmation after Apps Script reports success.
         document.getElementById('lead-form').style.display = 'none';
         document.getElementById('quiz-form-header').style.display = 'none';
         document.getElementById('form-success').classList.add('active');
