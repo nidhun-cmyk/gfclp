@@ -1460,14 +1460,59 @@ body { padding-bottom: 74px; }
       return;
     }
 
-    // FORM SUBMISSION PLACEHOLDER - wire to a real endpoint before launch
-    // (e.g. a Google Sheets webhook to match the team's shared lead sheet).
-    // Fields available: name, phone, email, filedBefore, recordsReady, businessType
-    // TODO: fetch('YOUR_ENDPOINT_URL', { method: 'POST', body: new FormData(this) });
+    // ==========================================================
+    // SEND LEAD TO GOOGLE APPS SCRIPT / GOOGLE SHEETS
+    // ==========================================================
 
-    document.getElementById('lead-form').style.display = 'none';
-    document.getElementById('quiz-form-header').style.display = 'none';
-    document.getElementById('form-success').classList.add('active');
+    var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwVm5o0HVONdinRzQrScseG1NAZ9r-W4-YuhU2HCt-yrSmlo5nOOHD8XFwt2uRDyqrIhg/exec';
+
+    var submitButton = document.querySelector('#lead-form button[type="submit"]');
+
+    // The +971 prefix is already shown in the form.
+    // The visitor enters only the remaining 9 digits.
+    var leadData = new URLSearchParams();
+    leadData.append('fullName', nameEl.value.trim());
+    leadData.append('mobile', phoneEl.value.replace(/[^0-9]/g, ''));
+    leadData.append('email', emailEl.value.trim());
+    leadData.append('filedBefore', filedEl.value);
+    leadData.append('recordsReady', recordsEl.value);
+    leadData.append('businessType', businessEl.value);
+
+    // Prevent duplicate submissions.
+    submitButton.disabled = true;
+    submitButton.textContent = 'Submitting...';
+
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      body: leadData,
+      redirect: 'follow'
+    })
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error('Network response failed.');
+        }
+        return response.json();
+      })
+      .then(function (result) {
+        if (!result || result.result !== 'success') {
+          throw new Error(
+            (result && result.message) ? result.message : 'Submission failed.'
+          );
+        }
+
+        // Only show the confirmation after Apps Script reports success.
+        document.getElementById('lead-form').style.display = 'none';
+        document.getElementById('quiz-form-header').style.display = 'none';
+        document.getElementById('form-success').classList.add('active');
+      })
+      .catch(function (error) {
+        console.error('Lead submission error:', error);
+
+        alert('We could not submit your details. Please try again.');
+
+        submitButton.disabled = false;
+        submitButton.textContent = 'Get Quote';
+      });
   });
 
   function resetLeadForm() {
@@ -1478,6 +1523,13 @@ body { padding-bottom: 74px; }
     document.getElementById('phone-verify').classList.remove('verified');
     document.getElementById('phone-verify').innerHTML = 'verified';
     emailTouched = false;
+
+    var submitButton = form.querySelector('button[type="submit"]');
+    if (submitButton) {
+      submitButton.disabled = false;
+      submitButton.textContent = 'Get Quote';
+    }
+
     document.getElementById('form-success').classList.remove('active');
     document.getElementById('quiz-form-header').style.display = 'block';
     form.style.display = 'block';
