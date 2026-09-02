@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UAE Corporate Tax Filing from AED 449 | GFC</title>
-<meta name="description" content="FTA-registered tax agents. Transparent corporate tax filing packages starting from AED 449. Check your requirement in under a minute.">
+<title>UAE Corporate Tax Filing | GFC</title>
+<meta name="description" content="FTA-registered tax agents. Transparent corporate tax filing packages with expert support. Check your requirements in under a minute.">
 <meta name="robots" content="noindex, follow">
 <link rel="icon" href="https://goldenfalconconsultants.com/favicon.ico">
 <style>
@@ -210,8 +209,7 @@ button { font-family: inherit; }
   align-items: start;
 }
 @media (min-width: 901px) {
-  .hero-grid { grid-template-columns: 1.15fr 0.85fr; align-items: stretch; }
-  .hero-content { display: flex; flex-direction: column; }
+  .hero-grid { grid-template-columns: 1.15fr 0.85fr; }
 }
 .hero .eyebrow-row {
   display: flex;
@@ -267,67 +265,6 @@ button { font-family: inherit; }
   margin-top: 1px;
 }
 .hero-bullets .check-icon svg { width: 11px; height: 11px; }
-
-.hero-accreditations {
-  margin-top: 30px;
-  max-width: 520px;
-  background: #fff;
-  border: 1px solid var(--gfc-border);
-  border-radius: var(--radius-lg);
-  padding: 22px 22px 24px;
-  box-shadow: var(--shadow);
-}
-@media (min-width: 901px) {
-  .hero-accreditations { margin-top: auto; }
-}
-.hero-accreditations .accred-heading {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 0 0 16px;
-}
-.hero-accreditations .accred-heading .badge-icon {
-  width: 24px; height: 24px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  background: var(--gfc-blue-light);
-  color: var(--gfc-blue);
-  display: flex; align-items: center; justify-content: center;
-}
-.hero-accreditations .accred-heading .badge-icon svg { width: 13px; height: 13px; }
-.hero-accreditations h3 {
-  font-size: 16px;
-  font-weight: 800;
-  color: var(--gfc-ink);
-  margin: 0;
-}
-.accred-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-}
-@media (min-width: 481px) {
-  .accred-grid { grid-template-columns: repeat(3, 1fr); }
-}
-@media (min-width: 901px) {
-  .accred-grid { grid-template-columns: repeat(3, 1fr); }
-}
-@media (min-width: 1100px) {
-  .accred-grid { grid-template-columns: repeat(4, 1fr); }
-}
-.accred-grid img {
-  width: 100%;
-  height: 68px;
-  object-fit: contain;
-  background: #fff;
-  border: 1px solid var(--gfc-border);
-  border-radius: 10px;
-  padding: 10px 14px;
-  filter: grayscale(100%);
-  opacity: 0.8;
-  transition: opacity 0.2s ease, filter 0.2s ease, transform 0.15s ease;
-}
-.accred-grid img:hover { filter: grayscale(0%); opacity: 1; transform: translateY(-1px); }
 
 .lead-form-wrap { position: sticky; top: 24px; }
 .lead-form {
@@ -432,7 +369,7 @@ button { font-family: inherit; }
   margin-top: 6px;
 }
 .lead-form .field-error-msg.show { display: block; }
-.lead-form button[type="submit"] {
+.lead-form button {
   width: 100%;
   margin-top: 22px;
   padding: 14px;
@@ -492,32 +429,6 @@ button { font-family: inherit; }
   transform: rotate(45deg);
 }
 
-/* Phone field (matches houseoftours pattern) */
-.phone-field-row { display: flex; gap: 8px; }
-.phone-prefix {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 12px;
-  background: var(--gfc-blue-light);
-  border: 1px solid var(--gfc-border);
-  border-radius: 8px;
-  font-size: 14.5px;
-  font-weight: 700;
-  color: var(--gfc-blue);
-  flex-shrink: 0;
-}
-.phone-field-row input { flex: 1; }
-.phone-verify {
-  margin: 8px 0 0;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--gfc-gray);
-  opacity: 0.45;
-  transition: color 0.2s ease, opacity 0.2s ease;
-}
-.phone-verify.verified { color: #1a7a3a; opacity: 1; }
-
 .quiz-disclaimer {
   margin: 16px 0 0;
   font-size: 11.5px;
@@ -526,53 +437,6 @@ button { font-family: inherit; }
   line-height: 1.5;
 }
 
-/* Success / thank-you state */
-.form-success-state { display: none; text-align: center; padding: 10px 6px 4px; }
-.form-success-state.active { display: block; }
-.form-success-state .success-check {
-  width: 72px; height: 72px;
-  margin: 0 auto 18px;
-  border-radius: 50%;
-  background: #e5f5eb;
-  color: #1a7a3a;
-  display: flex; align-items: center; justify-content: center;
-  animation: successPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
-}
-.form-success-state .success-check svg {
-  width: 36px; height: 36px;
-}
-.form-success-state .success-check svg path {
-  stroke-dasharray: 30;
-  stroke-dashoffset: 30;
-  animation: successDraw 0.4s ease-out 0.3s forwards;
-}
-@keyframes successPop {
-  0%   { transform: scale(0); opacity: 0; }
-  60%  { transform: scale(1.1); opacity: 1; }
-  100% { transform: scale(1); }
-}
-@keyframes successDraw {
-  to { stroke-dashoffset: 0; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .form-success-state .success-check { animation: none; }
-  .form-success-state .success-check svg path { animation: none; stroke-dashoffset: 0; }
-}
-.form-success-state .success-heading {
-  font-size: 18px;
-  font-weight: 800;
-  color: var(--gfc-ink);
-  margin: 0 0 10px;
-  line-height: 1.35;
-}
-.form-success-state .success-sub {
-  font-size: 14.5px;
-  color: var(--gfc-ink);
-  line-height: 1.6;
-  margin: 0 0 20px;
-}
-.form-success-state .btn-row { justify-content: center; }
-.form-success-state .quiz-restart { display: block; margin: 18px auto 0; }
 /* =========================================================================
    Trust strip - thick band with stats + Google rating graphic
    ========================================================================= */
@@ -1038,7 +902,6 @@ body { padding-bottom: 74px; }
   body { padding-bottom: 0; }
 }
 
-
 </style>
 
 <!--
@@ -1047,6 +910,14 @@ body { padding-bottom: 74px; }
   Suggested conversion events: whatsapp_click (header, hero, ticker, mid-cta, thank-you),
   quiz_step_complete (per step), form_submit (final step / thank-you shown).
 -->
+
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "y49ru35ixy");
+</script>
 
 </head>
 <body>
@@ -1083,7 +954,7 @@ body { padding-bottom: 74px; }
       <a href="#process">Why Us</a>
     </nav>
     <div class="header-right">
-      <a class="btn btn-call btn-header-wa" href="tel:+971503098987">
+      <a class="btn btn-call btn-header-wa" data-track-location="header" href="tel:+971503098987">
         <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 0 002.25-2.25v-1.372a1.5 1.5 0 00-1.318-1.489l-3.895-.487a1.5 1.5 0 00-1.5.732l-.712 1.28a11.25 11.25 0 01-5.94-5.94l1.28-.712a1.5 1.5 0 00.732-1.5l-.487-3.895A1.5 1.5 0 0010.372 4.5H9a2.25 2.25 0 00-2.25 2.25z"/></svg>
         Call Now
       </a>
@@ -1108,26 +979,11 @@ body { padding-bottom: 74px; }
         <li><span class="check-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Return prepared, reviewed and submitted - audit-ready working papers</li>
       </ul>
 
-      <div class="hero-accreditations">
-        <div class="accred-heading">
-          <span class="badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span>
-          <h3>Our Accreditations</h3>
-        </div>
-        <div class="accred-grid">
-          <img src="https://goldenfalconconsultants.com/images/images/logos1.png" alt="Accreditation logo" loading="lazy">
-          <img src="https://goldenfalconconsultants.com/images/images/logo2.png" alt="Accreditation logo" loading="lazy">
-          <img src="https://goldenfalconconsultants.com/images/images/logo3.png" alt="Accreditation logo" loading="lazy">
-          <img src="https://goldenfalconconsultants.com/images/images/logos4.jpeg" alt="Accreditation logo" loading="lazy">
-          <img src="https://goldenfalconconsultants.com/images/images/logos5.png" alt="Accreditation logo" loading="lazy">
-          <img src="https://goldenfalconconsultants.com/images/images/logos6.png" alt="Accreditation logo" loading="lazy">
-          <img src="https://goldenfalconconsultants.com/images/images/logo7.png" alt="Accreditation logo" loading="lazy">
-          <img src="https://goldenfalconconsultants.com/images/images/logos8.png" alt="Accreditation logo" loading="lazy">
-          <img src="https://goldenfalconconsultants.com/images/images/logo9.png" alt="Accreditation logo" loading="lazy">
-          <img src="https://goldenfalconconsultants.com/images/images/logo10.png" alt="Accreditation logo" loading="lazy">
-          <img src="https://goldenfalconconsultants.com/images/images/logo11.png" alt="Accreditation logo" loading="lazy">
-          <img src="https://goldenfalconconsultants.com/images/images/logo12.png" alt="Accreditation logo" loading="lazy">
-          <img src="https://goldenfalconconsultants.com/images/images/logos13.png" alt="Accreditation logo" loading="lazy">
-        </div>
+      <div class="btn-row">
+        <a class="btn btn-whatsapp" data-track-location="hero" href="https://api.whatsapp.com/send?phone=971503098987&text=Hi%20GFC%2C%20I%20need%20help%20with%20my%20corporate%20tax%20filing." target="_blank" rel="noopener">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.27 4.9L2 22l5.25-1.38a9.94 9.94 0 004.79 1.22h.01c5.52 0 10-4.48 10-10s-4.48-9.84-10.02-9.84zm5.85 14.13c-.25.7-1.45 1.34-2 1.42-.51.08-1.15.11-1.86-.12-.43-.14-.98-.32-1.68-.62-2.96-1.28-4.89-4.25-5.04-4.45-.15-.2-1.21-1.61-1.21-3.07 0-1.46.77-2.18 1.04-2.47.27-.29.6-.36.8-.36.2 0 .4 0 .57.01.18.01.43-.07.68.51.25.6.85 2.06.93 2.21.08.15.13.33.03.53-.1.2-.15.33-.3.5-.15.18-.31.4-.45.53-.15.15-.3.31-.13.61.17.3.77 1.26 1.65 2.04 1.14 1.01 2.1 1.33 2.4 1.48.3.15.48.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.73.81 2.02.96.3.15.5.22.57.35.08.13.08.7-.17 1.4z"/></svg>
+          Chat with a Tax Agent
+        </a>
       </div>
     </div>
 
@@ -1138,23 +994,7 @@ body { padding-bottom: 74px; }
           <p class="form-sub">Our expert tax agents will support from quote to filing within a day.</p>
         </div>
 
-        <form id="lead-form" novalidate>
-          <label for="lf-name">Name <span class="required">*</span></label>
-          <input type="text" id="lf-name" name="name" required autocomplete="name">
-          <p class="field-error-msg" id="lf-name-error">Please enter your name.</p>
-
-          <label for="lf-phone">Phone <span>(WhatsApp preferred)</span> <span class="required">*</span></label>
-          <div class="phone-field-row">
-            <span class="phone-prefix">+971</span>
-            <input type="tel" id="lf-phone" name="phone" placeholder="5X XXX XXXX" maxlength="9" inputmode="numeric" required autocomplete="tel-national" oninput="handlePhoneVerify(this)">
-          </div>
-          <p class="phone-verify" id="phone-verify">verified</p>
-          <p class="field-error-msg" id="lf-phone-error">Please enter 9 digits after +971.</p>
-
-          <label for="lf-email">Work Email <span class="required">*</span></label>
-          <input type="email" id="lf-email" name="email" required autocomplete="email" onblur="handleEmailBlur()" oninput="handleEmailInput(this.value)">
-          <p class="field-error-msg" id="lf-email-error">Please use your company work email, not a personal address (e.g. Gmail, Yahoo).</p>
-
+        <form id="lead-form">
           <label for="lf-filed">Have you filed a UAE Corporate Tax Return before? <span class="required">*</span></label>
           <select id="lf-filed" name="filedBefore" required>
             <option value="" disabled selected>Select an option</option>
@@ -1183,26 +1023,12 @@ body { padding-bottom: 74px; }
           </select>
           <p class="field-error-msg" id="lf-business-error">Please select an option.</p>
 
-          <button type="submit" class="btn btn-call">Get Quote</button>
+          <button type="button" class="btn btn-whatsapp" id="chat-with-agent-btn" data-track-location="form">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.27 4.9L2 22l5.25-1.38a9.94 9.94 0 004.79 1.22h.01c5.52 0 10-4.48 10-10s-4.48-9.84-10.02-9.84zm5.85 14.13c-.25.7-1.45 1.34-2 1.42-.51.08-1.15.11-1.86-.12-.43-.14-.98-.32-1.68-.62-2.96-1.28-4.89-4.25-5.04-4.45-.15-.2-1.21-1.61-1.21-3.07 0-1.46.77-2.18 1.04-2.47.27-.29.6-.36.8-.36.2 0 .4 0 .57.01.18.01.43-.07.68.51.25.6.85 2.06.93 2.21.08.15.13.33.03.53-.1.2-.15.33-.3.5-.15.18-.31.4-.45.53-.15.15-.3.31-.13.61.17.3.77 1.26 1.65 2.04 1.14 1.01 2.1 1.33 2.4 1.48.3.15.48.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.73.81 2.02.96.3.15.5.22.57.35.08.13.08.7-.17 1.4z"/></svg>
+            Chat with a Tax Agent
+          </button>
           <p class="privacy-note">By submitting, you agree to be contacted by a GFC advisor.</p>
         </form>
-
-        <div class="form-success-state" id="form-success">
-          <div class="success-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
-          <h3 class="success-heading">It's a good start!</h3>
-          <p class="success-sub">You are in safe hands. Our tax filing team will review your details and get in touch with you within 1 working day.<br>In the meantime, feel free to reach out if you have any questions.</p>
-          <div class="btn-row">
-            <a class="btn btn-call" href="tel:+971503098987">
-              <svg width="17" height="17" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 0 002.25-2.25v-1.372a1.5 1.5 0 00-1.318-1.489l-3.895-.487a1.5 1.5 0 00-1.5.732l-.712 1.28a11.25 11.25 0 01-5.94-5.94l1.28-.712a1.5 1.5 0 00.732-1.5l-.487-3.895A1.5 1.5 0 0010.372 4.5H9a2.25 2.25 0 00-2.25 2.25z"/></svg>
-              Call Now
-            </a>
-            <a class="btn btn-whatsapp" href="https://api.whatsapp.com/send?phone=971503098987&text=Hi%20GFC%2C%20I%20need%20help%20with%20my%20corporate%20tax%20filing." target="_blank" rel="noopener">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.27 4.9L2 22l5.25-1.38a9.94 9.94 0 004.79 1.22h.01c5.52 0 10-4.48 10-10s-4.48-9.84-10.02-9.84zm5.85 14.13c-.25.7-1.45 1.34-2 1.42-.51.08-1.15.11-1.86-.12-.43-.14-.98-.32-1.68-.62-2.96-1.28-4.89-4.25-5.04-4.45-.15-.2-1.21-1.61-1.21-3.07 0-1.46.77-2.18 1.04-2.47.27-.29.6-.36.8-.36.2 0 .4 0 .57.01.18.01.43-.07.68.51.25.6.85 2.06.93 2.21.08.15.13.33.03.53-.1.2-.15.33-.3.5-.15.18-.31.4-.45.53-.15.15-.3.31-.13.61.17.3.77 1.26 1.65 2.04 1.14 1.01 2.1 1.33 2.4 1.48.3.15.48.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.73.81 2.02.96.3.15.5.22.57.35.08.13.08.7-.17 1.4z"/></svg>
-              WhatsApp Now
-            </a>
-          </div>
-          <button type="button" class="quiz-restart" onclick="resetLeadForm()">Restart</button>
-        </div>
       </div>
     </div>
 
@@ -1327,9 +1153,9 @@ body { padding-bottom: 74px; }
         <h2>Ready to get started with Corporate Tax Filing?</h2>
         <p>Talk to our experts today - no obligation, no jargon, just clear advice.</p>
         <div class="btn-row">
-          <a class="btn btn-white" href="#lead-form-card" id="scroll-to-form">
-            <svg width="19" height="19" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path stroke-linecap="round" d="M8 3v3M16 3v3M3 9.5h18"/><path stroke-linecap="round" stroke-linejoin="round" d="M8.5 14l2 2 4-4"/></svg>
-            Get Quote
+          <a class="btn btn-whatsapp" data-track-location="mid_cta" href="https://api.whatsapp.com/send?phone=971503098987&text=Hi%20GFC%2C%20I%20need%20help%20with%20my%20corporate%20tax%20filing." target="_blank" rel="noopener">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.27 4.9L2 22l5.25-1.38a9.94 9.94 0 004.79 1.22h.01c5.52 0 10-4.48 10-10s-4.48-9.84-10.02-9.84zm5.85 14.13c-.25.7-1.45 1.34-2 1.42-.51.08-1.15.11-1.86-.12-.43-.14-.98-.32-1.68-.62-2.96-1.28-4.89-4.25-5.04-4.45-.15-.2-1.21-1.61-1.21-3.07 0-1.46.77-2.18 1.04-2.47.27-.29.6-.36.8-.36.2 0 .4 0 .57.01.18.01.43-.07.68.51.25.6.85 2.06.93 2.21.08.15.13.33.03.53-.1.2-.15.33-.3.5-.15.18-.31.4-.45.53-.15.15-.3.31-.13.61.17.3.77 1.26 1.65 2.04 1.14 1.01 2.1 1.33 2.4 1.48.3.15.48.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.73.81 2.02.96.3.15.5.22.57.35.08.13.08.7-.17 1.4z"/></svg>
+            Chat with a Tax Agent
           </a>
         </div>
         <p class="mid-cta-micro">Our tax agents will be in touch with you within 24 hours</p>
@@ -1342,11 +1168,11 @@ body { padding-bottom: 74px; }
     <div class="logo"><img src="https://goldenfalconconsultants.com/assets/logo2.png" alt="Golden Falcon Consultants" width="65" height="30"></div>
     <p class="footer-cta">Get a free consultation from our expert tax agents.</p>
     <div class="footer-buttons">
-      <a class="btn btn-call" href="tel:+971503098987">
+      <a class="btn btn-call" data-track-location="footer" href="tel:+971503098987">
         <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 0 002.25-2.25v-1.372a1.5 1.5 0 00-1.318-1.489l-3.895-.487a1.5 1.5 0 00-1.5.732l-.712 1.28a11.25 11.25 0 01-5.94-5.94l1.28-.712a1.5 1.5 0 00.732-1.5l-.487-3.895A1.5 1.5 0 0010.372 4.5H9a2.25 2.25 0 00-2.25 2.25z"/></svg>
         +971 50 309 8987
       </a>
-      <a class="btn btn-whatsapp" href="https://api.whatsapp.com/send?phone=971503098987&text=Hi%20GFC%2C%20I%20need%20help%20with%20my%20corporate%20tax%20filing." target="_blank" rel="noopener">
+      <a class="btn btn-whatsapp" data-track-location="footer" href="https://api.whatsapp.com/send?phone=971503098987&text=Hi%20GFC%2C%20I%20need%20help%20with%20my%20corporate%20tax%20filing." target="_blank" rel="noopener">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.27 4.9L2 22l5.25-1.38a9.94 9.94 0 004.79 1.22h.01c5.52 0 10-4.48 10-10s-4.48-9.84-10.02-9.84zm5.85 14.13c-.25.7-1.45 1.34-2 1.42-.51.08-1.15.11-1.86-.12-.43-.14-.98-.32-1.68-.62-2.96-1.28-4.89-4.25-5.04-4.45-.15-.2-1.21-1.61-1.21-3.07 0-1.46.77-2.18 1.04-2.47.27-.29.6-.36.8-.36.2 0 .4 0 .57.01.18.01.43-.07.68.51.25.6.85 2.06.93 2.21.08.15.13.33.03.53-.1.2-.15.33-.3.5-.15.18-.31.4-.45.53-.15.15-.3.31-.13.61.17.3.77 1.26 1.65 2.04 1.14 1.01 2.1 1.33 2.4 1.48.3.15.48.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.73.81 2.02.96.3.15.5.22.57.35.08.13.08.7-.17 1.4z"/></svg>
         Chat with a Tax Agent
       </a>
@@ -1359,30 +1185,75 @@ body { padding-bottom: 74px; }
 
 <!-- Sticky mobile CTA -->
 <div class="mobile-cta">
-  <a class="btn btn-call" href="tel:+971503098987">Call Now</a>
-  <a class="btn btn-whatsapp" href="https://api.whatsapp.com/send?phone=971503098987&text=Hi%20GFC%2C%20I%20need%20help%20with%20my%20corporate%20tax%20filing." target="_blank" rel="noopener">WhatsApp</a>
+  <a class="btn btn-call" data-track-location="mobile_sticky" href="tel:+971503098987">Call Now</a>
+  <a class="btn btn-whatsapp" data-track-location="mobile_sticky" href="https://api.whatsapp.com/send?phone=971503098987&text=Hi%20GFC%2C%20I%20need%20help%20with%20my%20corporate%20tax%20filing." target="_blank" rel="noopener">WhatsApp</a>
 </div>
 
 <script>
-  document.getElementById('scroll-to-form').addEventListener('click', function (e) {
-    e.preventDefault();
-    document.getElementById('lead-form-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
-  });
+  // ===== GFC CTA CLICK TRACKING =====
+  // Replace with the /exec URL from your deployed Apps Script Web App.
+  var CTA_TRACKING_URL = "https://script.google.com/macros/s/AKfycbzLwObtQl8isJY0pyYWYRNiCBt-7nOPi5NUCWpC6ulu576WO4QPizUlcuHLdPA3rz10/exec";
 
-  var CHECK_SVG_SMALL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="width:13px;height:13px;display:inline-block;vertical-align:-2px"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>';
-
-  var FREE_EMAIL_DOMAINS = [
-    'gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'icloud.com',
-    'aol.com', 'live.com', 'msn.com', 'protonmail.com', 'proton.me',
-    'mail.com', 'yandex.com', 'gmx.com', 'rediffmail.com'
-  ];
-
-  function isValidWorkEmail(value) {
-    var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRe.test(value)) return false;
-    var domain = value.split('@')[1].toLowerCase();
-    return FREE_EMAIL_DOMAINS.indexOf(domain) === -1;
+  function getTrackingParams() {
+    var qs = new URLSearchParams(window.location.search);
+    return {
+      utm_source: qs.get('utm_source') || '',
+      utm_medium: qs.get('utm_medium') || '',
+      utm_campaign: qs.get('utm_campaign') || '',
+      utm_term: qs.get('utm_term') || '',
+      utm_content: qs.get('utm_content') || '',
+      gclid: qs.get('gclid') || '',
+      gbraid: qs.get('gbraid') || '',
+      wbraid: qs.get('wbraid') || ''
+    };
   }
+
+  function trackCTA(eventType, buttonLocation, buttonText, destination) {
+    if (!CTA_TRACKING_URL || CTA_TRACKING_URL.indexOf('PASTE_') === 0) return;
+
+    var attribution = getTrackingParams();
+    var data = {
+      event_type: eventType,
+      button_location: buttonLocation || 'unknown',
+      button_text: (buttonText || '').trim(),
+      destination: destination || '',
+      page_url: window.location.href,
+      page_title: document.title,
+      referrer: document.referrer || '',
+      client_timestamp: new Date().toISOString(),
+      device: /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) ? 'mobile' : 'desktop',
+      user_agent: navigator.userAgent,
+      utm_source: attribution.utm_source,
+      utm_medium: attribution.utm_medium,
+      utm_campaign: attribution.utm_campaign,
+      utm_term: attribution.utm_term,
+      utm_content: attribution.utm_content,
+      gclid: attribution.gclid,
+      gbraid: attribution.gbraid,
+      wbraid: attribution.wbraid
+    };
+
+    var params = new URLSearchParams(data);
+
+    // Image-beacon style GET avoids CORS issues and does not need a response.
+    var img = new Image();
+    img.src = CTA_TRACKING_URL + '?' + params.toString() + '&_=' + Date.now();
+  }
+
+  // Track all direct Call and WhatsApp links using one delegated listener.
+  document.addEventListener('click', function (event) {
+    var link = event.target.closest('a[href^="tel:"], a[href*="api.whatsapp.com"], a[href*="wa.me"]');
+    if (!link) return;
+
+    var href = link.getAttribute('href') || '';
+    var eventType = href.indexOf('tel:') === 0 ? 'call_click' : 'whatsapp_click';
+    trackCTA(
+      eventType,
+      link.getAttribute('data-track-location') || 'unknown',
+      link.textContent,
+      href.indexOf('tel:') === 0 ? href : 'WhatsApp'
+    );
+  }, true);
 
   function setFieldError(input, errorId, hasError) {
     input.classList.toggle('field-error', hasError);
@@ -1392,64 +1263,29 @@ body { padding-bottom: 74px; }
     }
   }
 
-  // Phone: live "verified" indicator, digits actively rewritten (capped at 9)
-  // on every keystroke - the proven houseoftours.com pattern. Checkmark icon
-  // only appears once validation is actually complete.
-  function handlePhoneVerify(el) {
-    var digits = el.value.replace(/[^0-9]/g, '').slice(0, 9);
-    el.value = digits;
-    var hint = document.getElementById('phone-verify');
-    var isValid = digits.length === 9;
-    hint.innerHTML = isValid ? (CHECK_SVG_SMALL + ' verified') : 'verified';
-    hint.classList.toggle('verified', isValid);
-    if (isValid) setFieldError(el, 'lf-phone-error', false);
-  }
+  // Builds the WhatsApp message from the two dropdown answers that matter,
+  // per the agreed template, and opens the chat in a new tab.
+  var RECORDS_PHRASE_MAP = {
+    'Financial statements are ready': 'fully prepared',
+    'Accounts are still being prepared': 'being prepared',
+    "I'm not sure": 'requiring your help'
+  };
 
-  // Work email: validated on blur (not while still typing), live-updated after first blur.
-  var emailTouched = false;
-  function handleEmailInput(value) {
-    if (emailTouched) {
-      var valid = isValidWorkEmail(value.trim());
-      setFieldError(document.getElementById('lf-email'), 'lf-email-error', !valid && value.trim() !== '');
-    }
-  }
-  function handleEmailBlur() {
-    emailTouched = true;
-    var val = document.getElementById('lf-email').value.trim();
-    var valid = isValidWorkEmail(val);
-    setFieldError(document.getElementById('lf-email'), 'lf-email-error', !valid && val !== '');
-  }
+  document.getElementById('chat-with-agent-btn').addEventListener('click', function () {
+    var filedEl = document.getElementById('lf-filed');
+    var recordsEl = document.getElementById('lf-records');
+    var businessEl = document.getElementById('lf-business');
 
-  document.getElementById('lead-form').addEventListener('submit', function (e) {
-    e.preventDefault();
     var valid = true;
 
-    var nameEl = document.getElementById('lf-name');
-    var nameOk = nameEl.value.trim() !== '';
-    setFieldError(nameEl, 'lf-name-error', !nameOk);
-    if (!nameOk) valid = false;
-
-    var phoneEl = document.getElementById('lf-phone');
-    var phoneOk = phoneEl.value.replace(/[^0-9]/g, '').length === 9;
-    setFieldError(phoneEl, 'lf-phone-error', !phoneOk);
-    if (!phoneOk) valid = false;
-
-    var emailEl = document.getElementById('lf-email');
-    var emailOk = isValidWorkEmail(emailEl.value.trim());
-    setFieldError(emailEl, 'lf-email-error', !emailOk);
-    if (!emailOk) valid = false;
-
-    var filedEl = document.getElementById('lf-filed');
     var filedOk = filedEl.value !== '';
     setFieldError(filedEl, 'lf-filed-error', !filedOk);
     if (!filedOk) valid = false;
 
-    var recordsEl = document.getElementById('lf-records');
     var recordsOk = recordsEl.value !== '';
     setFieldError(recordsEl, 'lf-records-error', !recordsOk);
     if (!recordsOk) valid = false;
 
-    var businessEl = document.getElementById('lf-business');
     var businessOk = businessEl.value !== '';
     setFieldError(businessEl, 'lf-business-error', !businessOk);
     if (!businessOk) valid = false;
@@ -1460,72 +1296,22 @@ body { padding-bottom: 74px; }
       return;
     }
 
-    // ==========================================================
-    // SEND LEAD TO GOOGLE APPS SCRIPT / GOOGLE SHEETS
-    // ==========================================================
+    var businessAnswer = businessEl.value;
+    var recordsAnswer = RECORDS_PHRASE_MAP[recordsEl.value] || recordsEl.value;
 
-    var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwVm5o0HVONdinRzQrScseG1NAZ9r-W4-YuhU2HCt-yrSmlo5nOOHD8XFwt2uRDyqrIhg/exec';
+    var message = "Hello GFC,\n\nI have a " + businessAnswer + " with my financial records " + recordsAnswer + ".\n\nCan you help with my corporate tax filing?";
 
-    var submitButton = document.querySelector('#lead-form button[type="submit"]');
+    var url = "https://api.whatsapp.com/send?phone=971503098987&text=" + encodeURIComponent(message);
 
-    // The +971 prefix is already shown in the form.
-    // The visitor enters only the remaining 9 digits.
-    var leadData = new URLSearchParams();
-    leadData.append('fullName', nameEl.value.trim());
-    leadData.append('mobile', phoneEl.value.replace(/[^0-9]/g, ''));
-    leadData.append('email', emailEl.value.trim());
-    leadData.append('filedBefore', filedEl.value);
-    leadData.append('recordsReady', recordsEl.value);
-    leadData.append('businessType', businessEl.value);
+    trackCTA(
+      'whatsapp_click',
+      'form',
+      'Chat with a Tax Agent',
+      'WhatsApp'
+    );
 
-    // Prevent duplicate submissions.
-    submitButton.disabled = true;
-    submitButton.textContent = 'Submitting...';
-
-    fetch(SCRIPT_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      body: leadData,
-      redirect: 'follow'
-    })
-      .then(function () {
-        // In no-cors mode, Google Apps Script returns an opaque response.
-        // The browser cannot read response.json(), so we show success once
-        // the request has been sent without a network-level failure.
-
-        document.getElementById('lead-form').style.display = 'none';
-        document.getElementById('quiz-form-header').style.display = 'none';
-        document.getElementById('form-success').classList.add('active');
-      })
-      .catch(function (error) {
-        console.error('Lead submission error:', error);
-
-        alert('We could not submit your details. Please try again.');
-
-        submitButton.disabled = false;
-        submitButton.textContent = 'Get Quote';
-      });
+    window.open(url, '_blank', 'noopener');
   });
-
-  function resetLeadForm() {
-    var form = document.getElementById('lead-form');
-    form.reset();
-    form.querySelectorAll('.field-error').forEach(function (el) { el.classList.remove('field-error'); });
-    form.querySelectorAll('.field-error-msg.show').forEach(function (el) { el.classList.remove('show'); });
-    document.getElementById('phone-verify').classList.remove('verified');
-    document.getElementById('phone-verify').innerHTML = 'verified';
-    emailTouched = false;
-
-    var submitButton = form.querySelector('button[type="submit"]');
-    if (submitButton) {
-      submitButton.disabled = false;
-      submitButton.textContent = 'Get Quote';
-    }
-
-    document.getElementById('form-success').classList.remove('active');
-    document.getElementById('quiz-form-header').style.display = 'block';
-    form.style.display = 'block';
-  }
 
   // Trust-strip scroll hint: hide once scrolled near the end, or if there's
   // nothing to scroll in the first place (e.g. already fits on desktop).
